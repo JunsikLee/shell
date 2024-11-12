@@ -12,6 +12,6 @@ docker run --rm -it ubuntu:latest
 
 ## Shell 코드 다운로드
 ```
-apt upgrade -y && apt update -y && apt install -y git
+apt update && apt upgrade -y && apt install -y git
 git clone https://github.com/JunsikLee/shell.git
 ```
