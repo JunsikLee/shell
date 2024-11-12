@@ -4,6 +4,12 @@
 apt update
 apt install zsh git curl -y
 
+# 필요 패키지
+apt update && apt-get install -y locales fonts-powerline
+
+# UTF-8 설정
+locale-gen en_US.UTF-8
+
 # Oh My Zsh 설치 (자동 실행 및 .zshrc 덮어쓰기 방지)
 export RUNZSH=no
 export KEEP_ZSHRC=yes
@@ -27,7 +33,7 @@ cp ~/.zshrc ~/.zshrc.backup
 # 테마를 powerlevel10k로 설정
 #sed -i 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 
-# 테마를 powerlevel10k로 설정
+# 테마를 agnoster 설정
 sed -i 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/' ~/.zshrc
 
 # 플러그인 활성화
