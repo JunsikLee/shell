@@ -18,14 +18,17 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # powerlevel10k 테마 설치
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+#git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+#    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # 기존 .zshrc 백업
 cp ~/.zshrc ~/.zshrc.backup
 
 # 테마를 powerlevel10k로 설정
-sed -i 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+#sed -i 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+
+# 테마를 powerlevel10k로 설정
+sed -i 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/' ~/.zshrc
 
 # 플러그인 활성화
 sed -i 's/plugins=(.*)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
