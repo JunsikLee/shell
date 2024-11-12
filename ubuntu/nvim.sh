@@ -18,12 +18,26 @@ apt install -y neovim
 
 # Optional Requirements
 
+# ripgrep
+apt-get install -y ripgrep
+
+# lazygit
+apt install -y curl
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+install lazygit -D -t /usr/local/bin/
+
+# go
+apt install -y golang
+
+# Python3
+apt instalsl -y python3 python3-pip
+
 # Node.js
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash - 
 apt-get install -y nodejs
 
-## ripgrep
-apt-get install -y ripgrep
 
 # 설치 확인
 echo "Neovim version: $(nvim --version | head -n 1)"
